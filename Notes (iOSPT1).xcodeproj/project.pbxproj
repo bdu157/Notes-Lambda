@@ -48,6 +48,7 @@
 			children = (
 				0B87E75E2277DE8E0026D05E /* Notes (iOSPT1) */,
 				0B87E75D2277DE8E0026D05E /* Products */,
+				0BE97667227815E700ADAF85 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +63,57 @@
 		0B87E75E2277DE8E0026D05E /* Notes (iOSPT1) */ = {
 			isa = PBXGroup;
 			children = (
+				0BE9766A2278160900ADAF85 /* ModelController */,
+				0BE976692278160400ADAF85 /* Model */,
+				0BE97668227815F500ADAF85 /* Views */,
+				0BE9766B2278185400ADAF85 /* ViewControllers */,
+			);
+			path = "Notes (iOSPT1)";
+			sourceTree = "<group>";
+		};
+		0BE97667227815E700ADAF85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0B87E75F2277DE8E0026D05E /* AppDelegate.swift */,
-				0B87E7712277E9B90026D05E /* NotesViewController.swift */,
-				0B885FE52277F35800777080 /* NoteTableViewCell.swift */,
-				0B87E7632277DE8E0026D05E /* Main.storyboard */,
 				0B87E7662277DE8F0026D05E /* Assets.xcassets */,
 				0B87E7682277DE8F0026D05E /* LaunchScreen.storyboard */,
 				0B87E76B2277DE8F0026D05E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0BE97668227815F500ADAF85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B87E7632277DE8E0026D05E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0BE976692278160400ADAF85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				0B87E7732277F05F0026D05E /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BE9766A2278160900ADAF85 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
 				0B885FE32277F11700777080 /* NoteController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		0BE9766B2278185400ADAF85 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B87E7712277E9B90026D05E /* NotesViewController.swift */,
+				0B885FE52277F35800777080 /* NoteTableViewCell.swift */,
 				0B885FE72277FFF000777080 /* DetailViewController.swift */,
 			);
-			path = "Notes (iOSPT1)";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C22Z4773SH;
-				INFOPLIST_FILE = "Notes (iOSPT1)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C22Z4773SH;
-				INFOPLIST_FILE = "Notes (iOSPT1)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

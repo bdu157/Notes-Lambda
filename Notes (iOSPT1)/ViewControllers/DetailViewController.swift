@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var noteDetailTextView: UITextView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateView()
@@ -25,8 +26,8 @@ class DetailViewController: UIViewController {
     }
     
     private func updateView() {
-        guard let note = self.note, isViewLoaded else {return}
-        noteDetailTextView.text = note.text
+        guard let notes = self.note, isViewLoaded else {return}
+        self.noteDetailTextView.text = notes.text
     }
 
     /*

@@ -91,7 +91,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="noteLabel" destination="eTz-6E-ZTw" id="1Di-pE-yh7"/>
-                                            <segue destination="12b-rh-tFl" kind="showDetail" identifier="ToDetail" id="fK7-ak-oWM"/>
+                                            <segue destination="xjB-YH-EMS" kind="show" identifier="ToDetail" id="hCy-Wh-xPi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,15 +117,15 @@
             <point key="canvasLocation" x="1078" y="126"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="r7V-db-uFp">
+        <scene sceneID="Ctf-7c-0kE">
             <objects>
-                <viewController id="12b-rh-tFl" customClass="DetailViewController" customModule="Notes__iOSPT1_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4GZ-Xe-OWO">
+                <viewController id="xjB-YH-EMS" customClass="DetailViewController" customModule="Notes__iOSPT1_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kgx-5r-qfg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lkm-1K-SwB">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EfA-Jn-sz8" userLabel="Detail Text View">
+                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -133,20 +133,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lkm-1K-SwB" firstAttribute="leading" secondItem="e49-rB-NYo" secondAttribute="leading" id="VrJ-Uu-Czx"/>
-                            <constraint firstItem="Lkm-1K-SwB" firstAttribute="top" secondItem="e49-rB-NYo" secondAttribute="top" id="gkw-e0-pqV"/>
-                            <constraint firstItem="e49-rB-NYo" firstAttribute="trailing" secondItem="Lkm-1K-SwB" secondAttribute="trailing" id="lBq-EJ-5en"/>
-                            <constraint firstItem="e49-rB-NYo" firstAttribute="bottom" secondItem="Lkm-1K-SwB" secondAttribute="bottom" id="zSx-5l-9PY"/>
+                            <constraint firstItem="EfA-Jn-sz8" firstAttribute="leading" secondItem="RLS-qO-QwY" secondAttribute="leading" id="5EU-ho-sjS"/>
+                            <constraint firstItem="RLS-qO-QwY" firstAttribute="trailing" secondItem="EfA-Jn-sz8" secondAttribute="trailing" id="6zQ-bO-5tM"/>
+                            <constraint firstItem="EfA-Jn-sz8" firstAttribute="top" secondItem="Kgx-5r-qfg" secondAttribute="topMargin" id="8BQ-E8-Rb8"/>
+                            <constraint firstItem="RLS-qO-QwY" firstAttribute="bottom" secondItem="EfA-Jn-sz8" secondAttribute="bottom" id="Zqm-la-mLp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="e49-rB-NYo"/>
+                        <viewLayoutGuide key="safeArea" id="RLS-qO-QwY"/>
                     </view>
                     <connections>
-                        <outlet property="noteDetailTextView" destination="Lkm-1K-SwB" id="5Kv-r3-EpA"/>
+                        <outlet property="noteDetailTextView" destination="EfA-Jn-sz8" id="RND-XM-3gs"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qh-B3-Ajh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SE-kx-ARE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="126"/>
+            <point key="canvasLocation" x="1828" y="124.8768472906404"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YpH-Jx-Adq">
@@ -164,7 +164,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbo-eA-5QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369" y="126"/>
+            <point key="canvasLocation" x="358" y="126"/>
         </scene>
     </scenes>
 </document>

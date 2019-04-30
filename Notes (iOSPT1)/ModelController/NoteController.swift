@@ -10,14 +10,14 @@ import Foundation
 
 class NotesController {
     
+    private(set) var notes: [Note] = []
+    
     init() {
         
         createNote(withText: "Walk the dog!")
         createNote(withText: "Eat lunch!")
         createNote(withText: "Swift is asesome!")
     }
-    
-    private(set) var notes: [Note] = []
     
     func createNote(withText text: String) {
         let note = Note(text: text)

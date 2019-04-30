@@ -32,8 +32,8 @@ class NoteTableViewCell: UITableViewCell {
     weak var delegate: NoteTableViewCellDelegate?
     
     private func updateView() {
-        guard let note = self.note else {return}
-        self.noteLabel.text = note.text
+        guard let notes = self.note else {return}
+        self.noteLabel.text = notes.text
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {

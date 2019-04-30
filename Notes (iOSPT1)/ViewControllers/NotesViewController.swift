@@ -12,9 +12,10 @@ import UIKit
 // conform to the protocol
 class NotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NoteTableViewCellDelegate {
 
-
-    //Outlets and Properties
     let notesController = NotesController()
+    
+    //Outlets and Properties
+    
     @IBOutlet weak var noteTableView: UITableView!
     
     @IBOutlet weak var textView: UITextView!
@@ -55,6 +56,7 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
 
     }
+
  */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDetail" {
@@ -65,7 +67,7 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
             detailVC.note = note
         }
     }
- 
+
 
     @IBAction func saveNoteButtonTapped(_ sender: Any) {
         guard let text = self.textView.text else {return}
