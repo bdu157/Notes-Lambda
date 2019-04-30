@@ -45,7 +45,7 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
     
    
     // MARK: - Navigation
-
+/*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDetail" {
             guard let cell = sender as? NoteTableViewCell,
@@ -54,6 +54,16 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
             detailVC.note = cell.note
         }
 
+    }
+ */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToDetail" {
+            guard let selectedRow = self.noteTableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? DetailViewController else { return }
+            
+            let note = self.notesController.notes[selectedRow.row]
+            detailVC.note = note
+        }
     }
  
 
