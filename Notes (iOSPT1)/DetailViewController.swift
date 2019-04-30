@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     }
     
     private func updateView() {
-        guard let note = self.note, isViewLoadedß else {return}
+        guard let note = self.note, isViewLoaded else {return}
         noteDetailTextView.text = note.text
     }
 
