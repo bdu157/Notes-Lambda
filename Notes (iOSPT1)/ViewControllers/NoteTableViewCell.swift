@@ -15,6 +15,8 @@ import UIKit
 //4. assign the delegate
 
 
+//this case we want the ViewController - NotesViewController to share the note not view
+
 protocol NoteTableViewCellDelegate: AnyObject {
     func shareNote(for cell: NoteTableViewCell)
 }
@@ -29,7 +31,7 @@ class NoteTableViewCell: UITableViewCell {
         }
     }
     
-    weak var delegate: NoteTableViewCellDelegate?
+    weak var delegatessss: NoteTableViewCellDelegate?
     
     private func updateView() {
         guard let notes = self.note else {return}
@@ -37,6 +39,6 @@ class NoteTableViewCell: UITableViewCell {
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {
-        self.delegate?.shareNote(for: self)
+        self.delegatessss?.shareNote(for: self)   //when button pushed UIActivityViewController needs to pop up within NotesViewController not within NoteTableViewCell. so we use protocol and delegate to perform this - delegator - user tapped on this button what are you going to do to viewcontroller (delegate) then gives the func
     }
 }

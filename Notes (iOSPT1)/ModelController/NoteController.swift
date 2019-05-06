@@ -10,7 +10,7 @@ import Foundation
 
 class NotesController {
     
-    private(set) var notes: [Note] = []
+    var notes: [Note] = []
     
     init() {
         

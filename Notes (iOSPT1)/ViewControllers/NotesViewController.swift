@@ -15,6 +15,8 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
     let notesController = NotesController()
     
     //Outlets and Properties
+
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var noteTableView: UITableView!
     
@@ -23,8 +25,10 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.noteTableView.delegate = self
-        self.noteTableView.dataSource = self
+        self.noteTableView.delegate = self    //delegator : noteTableView and delegate : NotesViewController
+        self.noteTableView.dataSource = self  //self here is NotesViewController
+        
+        self.textView.delegate = self
 
     }
     
@@ -39,11 +43,16 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
         guard let noteCell = cell as? NoteTableViewCell else {return cell}
         let note = notesController.notes[indexPath.row]
         noteCell.note = note
-        noteCell.delegate = self
+        
+        noteCell.delegatessss = self  //this method is requesting info from delegate which is notetableviewcell and it gives what to show in a cell. self here is NotesTableViewController
         return cell
 
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        notesController.notes.remove(at: indexPath.row)
+    noteTableView.deleteRows(at: [indexPath], with: .automatic)
+    }
    
     // MARK: - Navigation
 /*
@@ -67,15 +76,15 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
             detailVC.note = note
         }
     }
-
-
+//textview save button
     @IBAction func saveNoteButtonTapped(_ sender: Any) {
         guard let text = self.textView.text else {return}
-        
         notesController.createNote(withText: text)
-        self.textView.text = nil
-        self.noteTableView.reloadData()
-        
+        self.textView.text = ""
+        let newRowIndex = notesController.notes.count - 1
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        noteTableView.insertRows(at: [indexPath], with: .automatic)
+        saveButton.isEnabled = false
     }
     
     func shareNote(for cell: NoteTableViewCell) {
@@ -84,20 +93,32 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
         let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
     }
-    
     /*
      1. create protocol
      2. add properties and methods to protocol
      3. In delegator, create (weak var delegate) property of type [Protocol]
      4 In IBAction call self.delegate.[insert method name here]
-     
-     
      // Delegate View
      1. adopt the protocol
-     2. assign the delegate when initializing the delegator view
-     3. "Add protocol stubs"
+     2. assign the delegate (noteCell.delegatessss = self) when initializing the delegator view - CellForRowAt
+     3. "Add protocol stubs"  requirement func shareNote
      4. add code in delegate method that you want the delegate to complete
     */
     
-    
+    //all these protocol and delegate are to show UIActivityViewController to show witin Viewcontroller not in TableViewCell where share button is within.
+}
+
+extension NotesViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let input = textView.text,
+                let stringRange = Range(range, in: input) else {return false}
+        
+            let newInput  = input.replacingCharacters(in: stringRange, with: text)
+        if newInput.isEmpty {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
+        return true
+    }
 }

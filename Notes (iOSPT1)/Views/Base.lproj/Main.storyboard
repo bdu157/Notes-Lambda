@@ -37,7 +37,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxb-X8-nsU">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxb-X8-nsU">
                                                     <rect key="frame" x="301" y="33" width="34" height="30"/>
                                                     <state key="normal" title="Save"/>
                                                     <connections>
@@ -56,24 +56,24 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="53" id="eRx-2X-LDS" customClass="NoteTableViewCell" customModule="Notes__iOSPT1_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140" width="375" height="53"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="56" id="eRx-2X-LDS" customClass="NoteTableViewCell" customModule="Notes__iOSPT1_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eRx-2X-LDS" id="rKZ-Zo-okI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="MjP-uF-Fcd">
-                                                    <rect key="frame" x="8" y="8" width="359" height="36.666666666666664"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="39.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTz-6E-ZTw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="312" height="36.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="312" height="39.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVX-WY-040">
-                                                            <rect key="frame" x="319" y="0.0" width="40" height="36.666666666666664"/>
+                                                            <rect key="frame" x="319" y="0.0" width="40" height="39.666666666666664"/>
                                                             <state key="normal" title="Share"/>
                                                             <connections>
                                                                 <action selector="shareButtonTapped:" destination="eRx-2X-LDS" eventType="touchUpInside" id="fms-Ma-1Hh"/>
@@ -109,12 +109,13 @@
                     <navigationItem key="navigationItem" title="Quick Notes" id="W1Q-Dh-MyT"/>
                     <connections>
                         <outlet property="noteTableView" destination="Hnb-Ej-lTU" id="Mal-wP-M49"/>
+                        <outlet property="saveButton" destination="qxb-X8-nsU" id="9EP-wC-QRG"/>
                         <outlet property="textView" destination="Zth-nX-2wv" id="8ub-Ml-Khc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="126"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="125.61576354679804"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ctf-7c-0kE">
